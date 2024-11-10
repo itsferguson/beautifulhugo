@@ -1,0 +1,42 @@
+<div class="flex-lists">
+  <div style="width: 500px; align-self: center">
+    <h2>{{ .Site.Params.author.name }}</h2>
+    <h2>{{ .Site.Params.author.job }}</h2>
+    {{ partial "socials.html" . }}
+  </div>
+  <div style="width: 500px">
+    <h2>About Me</h2>
+    <p>{{ .Site.Params.author.bio }}</p>
+
+    <!-- Flexbox section for lists -->
+    <div class="flex-lists">
+      <!-- Education Section -->
+      <div>
+        <div class="subheader">Education</div>
+        <ul style="list-style: none">
+          {{ range .Site.Params.author.education }}
+          <li class="flex items-start gap-3">
+            <i class="fas fa-solid fa-graduation-cap"></i>
+            <div>{{ .degree }}</div>
+            <div>{{ .university }} {{ .year }}</div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ if .Site.Params.author.experience }}
+      <div>
+        <div class="subheader">Education</div>
+        <ul style="list-style: none">
+          {{ range .Site.Params.author.education }}
+          <li class="flex items-start gap-3">
+            <i class="fas fa-solid fa-graduation-cap"></i>
+            <div>{{ .degree }}</div>
+            <div>{{ .university }} {{ .year }}</div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

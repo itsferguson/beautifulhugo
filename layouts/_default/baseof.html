@@ -9,7 +9,11 @@
   </head>
   <body>
     {{ partial "nav.html" . }}
-    {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+    {{ if .IsHome }}
+        {{ block "index_header" . }}{{ partial "index_header.html" . }}{{ end }}
+    {{ else }}
+        {{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+    {{ end }}
     {{ block "main" . }}{{ end }}
     {{ partial "footer.html" . }}
     {{ block "footer" . }}{{ end }}
