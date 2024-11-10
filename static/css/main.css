@@ -160,14 +160,13 @@ figure:not(.dark) img, img.white {
 /* --- Navbar --- */
 
 .navbar-custom {
+  border: none;
   background: #F5F5F5;
-  border-bottom: 1px solid #EAEAEA;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @media (prefers-color-scheme: dark) {
   .navbar-custom {
     background: #505050;
-    border-bottom: 1px solid #AAA;
   }
 }
 
@@ -356,7 +355,6 @@ figure:not(.dark) img, img.white {
 footer {
   padding: 30px 0;
   background: #F5F5F5;
-  border-top: 1px #EAEAEA solid;
   margin-top: auto;
   font-size: 14px;
 }
@@ -409,7 +407,6 @@ footer div.disclaimer {
 @media (prefers-color-scheme: dark) {
   footer {
     background: #444;
-    border-top: 1px #AAA solid;
   }
   footer a {
     color: #AAA;
