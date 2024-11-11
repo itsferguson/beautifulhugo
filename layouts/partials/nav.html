@@ -62,7 +62,7 @@
       </ul>
     </div>
 
-    {{ if isset .Site.Params "logo" }}
+    {{ if and (isset .Site.Params "logo") (.IsHome) }}
       <div class="avatar-container">
         <div class="avatar-img-border">
           <a title="{{ .Site.Title }}" href="{{ "" | absLangURL }}">
