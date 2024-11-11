@@ -815,6 +815,12 @@ table tr td :last-child {
 #social-share-section {
   margin-bottom: 30px;
 }
+  .icon-hover {
+    transition: transform 0.1s; /* Animation */
+  }
+  .icon-hover:hover {
+    transform: scale(1.1); /* Scale up on hover */
+  }
 
 /* --- Google Custom Search Engine Popup --- */
 #modalSearch table tr, #modalSearch table tr td, #modalSearch table tr th {
