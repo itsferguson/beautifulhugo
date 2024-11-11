@@ -1,42 +1,37 @@
-<div class="flex-lists">
-  <div style="width: 500px; align-self: center">
-    <h2>{{ .Site.Params.author.name }}</h2>
-    <h2>{{ .Site.Params.author.job }}</h2>
-    {{ partial "socials.html" . }}
-  </div>
-  <div style="width: 500px">
+<div style="text-align: center; margin-bottom: 20px;">
+  <h2>{{ .Site.Params.author.name }}</h2>
+  <h3>{{ .Site.Params.author.job }}</h3>
+  {{ partial "socials.html" . }}
+</div>
+
+<div class="flex-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+  <!-- About Me Section (aligned right) -->
+  <div class="about-me" style="width: 45%; text-align: right; min-width: 300px;">
     <h2>About Me</h2>
     <p>{{ .Site.Params.author.bio }}</p>
+  </div>
 
-    <!-- Flexbox section for lists -->
-    <div class="flex-lists">
-      <!-- Education Section -->
-      <div>
-        <div class="subheader">Education</div>
-        <ul style="list-style: none">
-          {{ range .Site.Params.author.education }}
-          <li class="flex items-start gap-3">
-            <i class="fas fa-solid fa-graduation-cap"></i>
-            <div>{{ .degree }}</div>
-            <div>{{ .university }} {{ .year }}</div>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
-      {{ if .Site.Params.author.experience }}
-      <div>
-        <div class="subheader">Education</div>
-        <ul style="list-style: none">
-          {{ range .Site.Params.author.education }}
-          <li class="flex items-start gap-3">
-            <i class="fas fa-solid fa-graduation-cap"></i>
-            <div>{{ .degree }}</div>
-            <div>{{ .university }} {{ .year }}</div>
-          </li>
-          {{ end }}
-        </ul>
-      </div>
+  <!-- Education Section (aligned left) -->
+  <div class="education" style="width: 45%; text-align: left; min-width: 300px;">
+    <h2>Education</h2>
+    <ul style="list-style: none; padding: 0;">
+      {{ range .Site.Params.author.education }}
+      <li style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+        <i class="fas fa-solid fa-graduation-cap"></i>
+        <div>
+          <strong>{{ .degree }}</strong><br>
+          {{ .university }} - {{ .year }}
+        </div>
+      </li>
       {{ end }}
-    </div>
+    </ul>
   </div>
 </div>
+    {{ if $.Site.Params.author.resume }}
+<div style="margin:auto; width:fit-content">
+            <a href="{{ $.Site.Params.author.resume }}" title="Download Resume" class="btn btn-primary" style="background:white; color:black">
+                <i class="fas fa-file-download"></i> Download Resume
+            </a>
+</div>
+
+    {{ end }}
